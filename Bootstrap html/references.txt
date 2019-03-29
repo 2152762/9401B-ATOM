@@ -1,0 +1,13 @@
+****TEMPLATE*****
+-NAVBAR
+-CAROUSEL
+https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_temp_marketing&stacked=h
+
+-GALLERY
+https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_img_thumbnail2&stacked=h
+
+-PAGINATION
+https://www.w3schools.com/bootstrap/bootstrap_pagination.asp
+
+-SEARCH BAR
+https://www.w3schools.com/howto/howto_css_searchbar.asp
