@@ -1,53 +1,45 @@
-const app = document.getElementById('root');
-
-const logo = document.createElement('img');
-logo.src = 'logo.png';
-
-const container = document.createElement('div');
-container.setAttribute('class', 'container');
-
-app.appendChild(logo);
-app.appendChild(container);
-
-var request = new XMLHttpRequest();
-request.open('GET', 'https://api.themoviedb.org/3/movie/550?api_key=32bb73effdd6a18cf39e0cfbe164c2c1', true);
-request.onload = function () {
-
-  // Begin accessing JSON data here
-  var data = JSON.parse(this.response);
-//  if (request.status >= 200 && request.status < 400) {
-//    data.forEach(movie => {
-//      const card = document.createElement('div');
-//      card.setAttribute('class', 'card');
-//
-//      const h1 = document.createElement('h1');
-//      h1.textContent = movie.title;
-//
-//      const p = document.createElement('p');
-//      movie.description = movie.description.substring(0, 300);
-//      p.textContent = `${movie.description}...`;
-//
-//      container.appendChild(card);
-//      card.appendChild(h1);
-//      card.appendChild(p);
-//        
-//       console.log(movie.title)
+        let baseURL = 'https://api.themoviedb.org/3/';
+        let configData = null;
+        let baseImageURL = "http://image.tmdb.org/t/p/";
+        let APIKEY = '32bb73effdd6a18cf39e0cfbe164c2c1';
+//        let image = "http://image.tmdb.org/t/p/";
+        let getConfig = function () {
+            
+            let url = "".concat(baseURL, 'configuration?api_key=', APIKEY); 
+            fetch(url)
+            .then((result)=>{
+                return result.json();
+            })
+            .then((data)=>{
+            var keyword = document.getElementById("keyword").value;
+                baseImageURL = data.images.secure_base_url;
+                configData = data.images;
+//                console.log('config:', data);
+//                console.log('config fetched');
+//                console.log('keyword:', keyword)
+//                console.log(data.poster_path)
+                runSearch(keyword)
+            })
+            .catch(function(err){
+                alert(err);
+            });
+        }
     
-    const card = document.createElement('div');
-    card.setAttribute('class','card')
-    console.log(data.overview)
-    const p = document.createElement('p');
-    p.textContent = data.overview;
-    container.appendChild(card);
-    card.appendChild(p);
-    
-    
-//    });
-  } //else {
-//    const errorMessage = document.createElement('marquee');
-//    errorMessage.textContent = `Gah, it's not working!`;
-//    app.appendChild(errorMessage);
-//  }
-
-
-request.send();
+        
+        
+        let runSearch = function (keyword) {
+            let url = ''.concat(baseURL, 'search/movie?api_key=', APIKEY, '&query=', keyword);
+            fetch(url)
+            .then(result=>result.json())
+            .then((data)=>{
+                //process the returned data  
+                document.getElementById('output').innerHTML = 
+                   data.results[0];
+               var arr = data.results[0].poster_path
+               console.log(arr)
+                
+                //work with results array...
+            })
+//            document.addEventListener('DOMContentLoaded');
+        }
+//        getConfig();
