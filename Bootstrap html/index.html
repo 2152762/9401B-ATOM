@@ -9,6 +9,7 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src = "js.js"></script>
 </head>
 <body>
 <div class="container-fluid" id="home">
@@ -18,9 +19,11 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="search-container">
-      <form action="/action_page.php">
-        <input type="text" placeholder="Search Movie" name="search">
+      <form>
+<!--          <fieldset>-->
+        <input id="keyword" onclick="showResults()" type="text" placeholder="Search Movie" name="search">
         <button type="submit">Search</button>
+<!--          </fieldset>-->
       </form>
     </div>
     <ul class="nav navbar-nav">
@@ -44,28 +47,28 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="https://placehold.it/1200x400?text=IMAGE" alt="Image">
+      <a><img src="https://placehold.it/1200x400?text=IMAGE" alt="Image" class="itemCar"></a>
       <div class="carousel-caption">
         <h2>Now Showing</h2>
       </div>      
     </div>
 
     <div class="item">
-      <img src="https://placehold.it/1200x400?text=IMAGE" alt="Image">
+      <img src="https://placehold.it/1200x400?text=IMAGE" alt="Image" class="itemCar">
       <div class="carousel-caption">
         <h2>Now Showing</h2>
       </div>      
     </div>
 
     <div class="item">
-      <img src="https://placehold.it/1200x400?text=IMAGE" alt="Image">
+      <img src="https://placehold.it/1200x400?text=IMAGE" alt="Image" class="itemCar">
       <div class="carousel-caption">
         <h2>Now Showing</h2>
       </div>      
     </div>
 
     <div class="item">
-      <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+      <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image" class="itemCar">
       <div class="carousel-caption">
         <h2>Now Showing</h2>
       </div>      
@@ -88,9 +91,9 @@
   <h2>Featured List</h2>
   <div class="row">
     <div class="col-md-2">
-      <div class="thumbnail">
+      <div class="thumbnail" id="featured">
         <a href="trailer.html" target="_blank">
-          <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+          <img src="https://placehold.it/1200x400?text=Another Image Maybe" id="img" alt="Image" class="popImage">
           <div class="caption">
             <p>Movie Title</p>
           </div>
@@ -100,7 +103,7 @@
     <div class="col-md-2">
       <div class="thumbnail">
         <a href="#" target="_blank">
-          <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+          <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image" class="popImage">
           <div class="caption">
             <p>Movie Title</p>
           </div>
@@ -110,7 +113,7 @@
     <div class="col-md-2">
       <div class="thumbnail">
         <a href="#" target="_blank">
-          <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+          <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image" class="popImage">
           <div class="caption">
             <p>Movie Title</p>
           </div>
@@ -120,7 +123,7 @@
     <div class="col-md-2">
       <div class="thumbnail">
         <a href="#" target="_blank">
-          <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+          <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image" class="popImage">
           <div class="caption">
             <p>Movie Title</p>
           </div>
@@ -130,7 +133,7 @@
     <div class="col-md-2">
       <div class="thumbnail">
         <a href="#" target="_blank">
-          <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+          <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image" class="popImage">
           <div class="caption">
             <p>Movie Title</p>
           </div>
@@ -140,7 +143,7 @@
     <div class="col-md-2">
       <div class="thumbnail">
         <a href="#" target="_blank">
-          <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+          <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image" class="popImage">
           <div class="caption">
             <p>Movie Title</p>
           </div>
@@ -153,7 +156,7 @@
     <div class="col-md-2">
       <div class="thumbnail">
         <a href="#" target="_blank">
-          <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+          <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image" class="popImage">
           <div class="caption">
             <p>Movie Title</p>
           </div>
@@ -163,7 +166,7 @@
     <div class="col-md-2">
       <div class="thumbnail">
         <a href="#" target="_blank">
-          <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+          <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image" class="popImage">
           <div class="caption">
             <p>Movie Title</p>
           </div>
@@ -173,7 +176,7 @@
     <div class="col-md-2">
       <div class="thumbnail">
         <a href="#" target="_blank">
-          <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+          <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image" class="popImage">
           <div class="caption">
             <p>Movie Title</p>
           </div>
@@ -183,7 +186,7 @@
     <div class="col-md-2">
       <div class="thumbnail">
         <a href="#" target="_blank">
-          <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+          <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image" class="popImage">
           <div class="caption">
             <p>Movie Title</p>
           </div>
@@ -193,7 +196,7 @@
     <div class="col-md-2">
       <div class="thumbnail">
         <a href="#" target="_blank">
-          <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+          <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image" class="popImage">
           <div class="caption">
             <p>Movie Title</p>
           </div>
@@ -203,9 +206,9 @@
     <div class="col-md-2">
       <div class="thumbnail">
         <a href="#" target="_blank">
-          <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
+          <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image" class="popImage">
           <div class="caption">
-            <p>Movie Title</p>
+            <p class="over">Movie Title</p>
           </div>
         </a>
       </div>
