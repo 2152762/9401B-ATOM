@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>Using TheMovieDB</title>
+    <meta name="viewport" content="width=device-width">
+    <!-- API version 3 documentation: 
+        https://developers.themoviedb.org/3/search
+        https://developers.themoviedb.org/3/movies
+    -->
+</head>
+    <body>
+		<form>
+			<div class="container">
+			<!-- Notifications -->
+			<div class="notification" id="added"> Added to Watchlist !</div>
+			<div class="notification" id="alreadyStored"> Already in watchlist !</div>
+			<div id="movie"></div>
+			<h2 id="trailer_title">Trailer</h2>
+			<div id="trailer"></div>
+			<div id="rec_title">
+				<h1>Recommendations</h1>
+				<p>Here are some similar movies to this one:</p>
+			</div>
+			<div id="recommended"></div>
+			<div class="page">
+				<button id="prev" title="Previous page">PREVIOUS</button>
+				<button id="next" title="Next page">NEXT</button>
+			</div>
+			<div id="overlay" class="overlay"></div>
+		</div>
+		</form>
+
+    
+    </body>
+</html>
+
+<script src="search.js"></script>
+<script> getMovie(); </script>
