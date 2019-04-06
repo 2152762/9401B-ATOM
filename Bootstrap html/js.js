@@ -35,7 +35,7 @@
             .then((data)=>{
 //                let divs = document.getElementsByTagName('div');
                 let imgs  = document.getElementsByClassName('popImage');
-                let over = document.getElementsByClassName('over')
+//                let over = document.getElementsByClassName('over')
                 var res = data.results;
             for (var i = 0; i < res.length; i++) {
                 // get the size of the inner array
@@ -43,53 +43,71 @@
              
             }
              
-            for (var x = 0; x < over.length; x++){
-                over[x].innerHTML = res[x].overview;
-                
-            }
+//            for (var x = 0; x < over.length; x++){
+//                over[x].innerHTML = res[x].overview;
+//                
+//            }
             for(var z = 0; z < imgs.length; z++){
                 imgs[z].src = ''.concat(baseImageURL,'original',res[z].poster_path);
                 console.log(imgs[z])
             }
-                
-            
-            
-                
-                
+                            
                 //work with results array...
             })
 //            document.addEventListener('DOMContentLoaded');
             
+            
         }
         popularMovies();
 
-//        let nowPlaying = function () {
-//            let url = ''.concat(baseURL, 'movie/now_playing?api_key=', APIKEY,'&page=1');
-//            fetch(url)
-//            .then(result=>result.json())
-//            .then((data)=>{
-////                let divs = document.getElementsByTagName('div');
-//                let imgs  = document.getElementsByClassName('item');
-////                let over = document.getElementsByClassName('item')
-//                var res = data.results;
-//            for (var i = 0; i < res.length; i++) {
-//                // get the size of the inner array
-//               console.log(res[i])
-//             
-//            }
-//             
-//            for(var z = 0; z < imgs.length; z++){
-//                imgs[z].src = ''.concat(baseImageURL,'original',res[z].poster_path);
-//                console.log(imgs[z])
-//            }
-//                
-//            
-//            
-//                
-//                
-//                //work with results array...
-//            })
-////            document.addEventListener('DOMContentLoaded');
-//            
-//        }
-//        nowPlaying();
+        let upcoming = function () {
+            let url = ''.concat(baseURL, 'movie/upcoming?api_key=', APIKEY,'&page=1');
+            fetch(url)
+            .then(result=>result.json())
+            .then((data)=>{
+                let imgs  = document.getElementsByClassName('itemCar');
+
+                var res = data.results;
+            for (var i = 0; i < res.length; i++) {
+                // get the size of the inner array
+               console.log(res[i])
+             
+            }
+             
+            for(var z = 0; z < imgs.length; z++){
+                imgs[z].src = ''.concat(baseImageURL,'original',res[z].backdrop_path);
+                console.log(imgs[z])
+            }
+
+                //work with results array...
+            })
+//            document.addEventListener('DOMContentLoaded');
+            
+        } 
+        upcoming();
+
+    let topRated = function () {
+            let url = ''.concat(baseURL, 'movie/top_rated?api_key=', APIKEY,'&page=1');
+            fetch(url)
+            .then(result=>result.json())
+            .then((data)=>{
+                let imgs  = document.getElementsByClassName('top');
+                
+                var res = data.results;
+            for (var i = 0; i < res.length; i++) {
+                // get the size of the inner array
+               console.log(res[i])
+             
+            }
+             
+            for(var z = 0; z < imgs.length; z++){
+                imgs[z].src = ''.concat(baseImageURL,'original',res[z].poster_path);
+                console.log(imgs[z])
+            }
+
+                //work with results array...
+            })
+//            document.addEventListener('DOMContentLoaded');
+            
+        } 
+        topRated();
