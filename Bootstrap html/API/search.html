@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>Fongkot Movies</title>
+    <meta name="viewport" content="width=device-width">
+    <!-- API version 3 documentation: 
+        https://developers.themoviedb.org/3/search
+        https://developers.themoviedb.org/3/movies
+    -->
+</head>
+    <body style="background-color: #b3c6ff">
+		<div class="container-fluid" id="home">
+  			<img src="image/logo.jpg" id="logo">
+		</div>
+		<main class="container mt-2">
+			<form class="form-group">
+				<fieldset>
+					<input type="text" id = "keyword" name="search" class="form-control" placeholder="Please enter a moive title." >
+				</fieldset>
+				<button type="submit" class="btn btn-primary mt-2">Search Movie</button>
+        	</form>
+			  <section class="mt-2 row" id ="result">  
+  				</section>
+		</main>
+
+    
+    </body>
+</html>
+
+<script src="search.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+

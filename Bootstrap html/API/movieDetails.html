@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>Using TheMovieDB</title>
+    <meta name="viewport" content="width=device-width">
+    <!-- API version 3 documentation: 
+        https://developers.themoviedb.org/3/search
+        https://developers.themoviedb.org/3/movies
+    -->
+</head>
+    <body style="background-color: #b3c6ff">
+		<div class="container-fluid" id="home">
+  			<img src="image/logo.jpg" id="logo">
+		</div>
+		<form>
+		<div class="container">
+			<div id="movie"></div>
+		</div>
+		</form>
+
+    
+    </body>
+</html>
+
+<script src="search.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script> getMovie(); </script>
