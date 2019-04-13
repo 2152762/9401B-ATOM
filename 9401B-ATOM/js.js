@@ -3,7 +3,7 @@
         let baseImageURL = "http://image.tmdb.org/t/p/";
         let APIKEY = '32bb73effdd6a18cf39e0cfbe164c2c1';
         let dataPage = 1;
-        let totalPage = 990
+//        let totalPage = 990
         
 //Displays Popular Movies From the api. Limited to 3 pages
 
@@ -28,12 +28,7 @@
                     for(var x = 0; x < title.length; x++){
                          title[x].innerHTML = ''.concat(res[x].title)   
                     }
-//                            while(dataPage >= 1){
-//                                var node = document.createElement('li');
-//                                var textnode = document.createTextNode('data');
-//                                node.appendChild(textnode);                                
-//                                document.getElementById(page).appendChild(node);
-//                            }
+                
             })
 //            document.addEventListener('DOMContentLoaded');
             
@@ -41,7 +36,18 @@
         }
     
     nextPagePop = function (){
-        if(dataPage >= 1){
+    var header = document.getElementById("page");
+    var btns = header.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].className += " active";
+                var current = document.getElementsByClassName("btn");
+                  if (current.length >= 0) { 
+                        current[0].className = current[0].className.replace(" active", "");
+                  }
+                          this.className += " active";
+                            
+        }
+        if(dataPage >= 1 && dataPage < 3){
                  dataPage += 1
                      console.log('next',dataPage);
             
@@ -51,27 +57,20 @@
                     .then((data)=>{
                         let imgs  = document.getElementsByClassName('popImage');
                         let title = document.getElementsByClassName('popTitle');
+                
                 var res = data.results;
-                for (var i = 0; i < res.length; i++) {
-                    
-
-                }
-             
-                    for(var z = 0; z < imgs.length; z++){
-                        imgs[z].src = ''.concat(baseImageURL,'original',res[z].poster_path);
         //                console.log(imgs[z])
+                        for(var z = 0; z < imgs.length; z++){
+                        imgs[z].src = ''.concat(baseImageURL,'original',res[z].poster_path);
                     }
-                        for(var x = 0; x < title.length; x++){
-                         title[x].innerHTML = ''.concat(res[x].title)   
-                        }
+                    for(var x = 0; x < title.length; x++){
+                        title[x].innerHTML = ''.concat(res[x].title)
+                    }
+
                         
-                            
-                                    var node = document.createElement("LI");
-                                    node.className = 'page-item';
-                                  var textnode = document.createTextNode(dataPage);
-                                  node.appendChild(textnode);
-                                  document.getElementById("page").appendChild(node);
-                            
+                        
+                        
+                        
                 //work with results array...
             })
 //            document.addEventListener('DOMContentLoaded');
@@ -277,6 +276,7 @@
                     for(var z = 0; z < imgs.length; z++){
                         imgs[z].src = ''.concat(baseImageURL,'original',res[z].poster_path);
                     }
+                
 
                 //work with results array...
             })
@@ -313,3 +313,18 @@
             }
         }
     nowPlaying()
+
+buttonklikPop = function(){
+  var header = document.getElementById("page");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("btn active");
+  if (current.length > 0) { 
+    current[0].className = current[0].className.replace(" active", "");
+  }
+  this.className += " active";
+  });
+}
+    
+}
