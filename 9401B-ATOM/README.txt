@@ -1,0 +1,1 @@
+Just copy and paste somewhere when extracted from the zip file. no credentials needed
